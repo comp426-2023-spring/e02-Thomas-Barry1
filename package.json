@@ -1,7 +1,7 @@
 {
-  "name": "html-cs-js-demo",
+  "name": "Final Exam",
   "version": "1.0.0",
-  "description": "This is the base code for an html+css+js demo non-assignment (extra credit).",
+  "description": "Create Tic Tac Toe Game",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -20,11 +20,16 @@
     "express",
     "server"
   ],
-  "author": "@jdmar3",
+  "author": "Thomas-Barry1",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "express": "^4.18.2",
     "minimist": "^1.2.8",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
   }
 }
