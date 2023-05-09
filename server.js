@@ -102,3 +102,36 @@ process.on('SIGINT', () => {
         }    
     })
 })
+// Do I need to change the endpoints to suit this assignment?
+// import {rps, rpsls} from "./lib/rpsls.js"; // Do I need to put both the lib and bin folders into the public directory? -> No, just the 'lib' folder | What's the path?
+
+app.get("/app/", (req, res, next) => {
+  res.status(200).send("200 OK");
+})
+
+app.get("/app/rps/play", (req, res, next) => {
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(rps());
+})
+  
+app.get("/app/rpsls/play", (req, res, next) => {
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(rpsls());
+})
+
+app.get("/app/rps/play/:shot", (req, res, next) => {
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(rps(req.params.shot)); 
+})
+
+app.get("/app/rpsls/play/:shot", (req, res, next) => {
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(rpsls(req.params.shot)); 
+})
+
+app.all("/app/*", (req, res, next) => {
+    res.status(404).send("404 NOT FOUND"); // Change following number to '404'
+})
+
+// Do I need to do a 'process.exit(0)' here? -> Update: No, don't include for right now
+// process.exit(0);
