@@ -1,24 +1,31 @@
-<html>
+<html lang="en-us"> <!-- Debugging: Include the following ("en-us" for this line and title line) to specify language -->
     <head>
-        <title>Rock</title>
-		<link href="./styles.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-		<script src="./scripts.js"></script>
         <!-- Link to your script file(s) and CSS in here somewhere -->
+		<title lang="en-us">Wanna Play Rock, Paper, Scissors?</title>
+		<link href="./styles.css" rel="stylesheet">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+		<script src="./scripts.js"></script>
+		<style> body { border: outset 8px;} </style>
     </head>
     <body onload="showHideShots()">
 
+		<h1>Rock, Paper, Scissors, SHOOT!</h1>
+		<br><br>
+
 		<form id="userinput" class="" action="javascript:void(0);">
-			<input type="radio" id="rps" name="game" value="rps" checked="checked" onclick="showHideShots()">
+			<div class="centerbuttons">
+			<input type="radio" id="rps" name="game" value="rps" checked onclick="showHideShots()">
 			<label for="rps">Play rock, paper, scissors?</label>
-			<br/><br/>
+			<br><br>
 			<input type="radio" id="rpsls" name="game" value="rpsls" onclick="showHideShots()">
 			<label for="rpsls">Play rock, paper, scissors, lizard, Spock?</label>
-			<br/><br/>
+			<br><br>
 			<input type="checkbox" id="opponent" name="playtype" value="opponent" onclick="showHideShots()">
 			<label for="opponent">Play against an opponent?</label>
-			<br/><br/>
-			<input type="radio" id="rock" name="shot" value=rock" class="rps shots" checked="checked">
+			</div>
+
+			<br><br>
+			<input type="radio" id="rock" name="shot" value="rock" class="rps shots" checked>
 			<label class="shots rps">Rock</label>
 			<input type="radio" id="paper" name="shot" value="paper" class="rps shots">
 			<label class="shots rps">Paper</label>
@@ -31,10 +38,17 @@
 <!--			<br/><br/>
 			<input type="submit" id="play" name="controls" value="Play">
       <input type="submit" id="startover" name="controls" value="Start Over"> -->
+		<br>
+	    <div class="centerSubmit">
+	    <button type="submit">Submit</button>
+		</div>
 		</form>
-		<br/><br/>
-    <button type="button" id="play" onclick="playGame()">Play</button>
-    <button type="button" id="startover" onclick="startOver()">Start Over</button>
+		<br><br><br><br><br><br>
+
+		<div class="centerPlayStart">
+    	<button type="button" id="play" onclick="playGame()">Play</button>
+    	<button type="button" id="startover" onclick="startOver()">Start Over</button>
+		</div>
 
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
