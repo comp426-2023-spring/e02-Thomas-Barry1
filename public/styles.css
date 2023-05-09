@@ -1,3 +1,16 @@
-.rpsls {
-    display: none;
+body {
+}
+
+h1 {
+}
+
+p {
+}
+
+button#play_button {
+	display: none;
+}
+
+div#results {
+	display: none;
 }
