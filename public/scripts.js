@@ -57,9 +57,9 @@ function validate(e) {
 	}
 	
 	if (ok) {
-		document.getElementById("play_button").style.display = "inline";
+		document.getElementById("play_btn").style.display = "inline";
 	} else {
-		document.getElementById("play_button").style.display = "none";
+		document.getElementById("play_btn").style.display = "none";
 	}
 	
 }
