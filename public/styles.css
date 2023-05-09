@@ -7,10 +7,10 @@ h1 {
 p {
 }
 
-button#play_button {
+#play_button {
 	display: none;
 }
 
-div#results {
+#results {
 	display: none;
 }
