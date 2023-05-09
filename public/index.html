@@ -1,57 +1,37 @@
-<html lang="en-us"> <!-- Debugging: Include the following ("en-us" for this line and title line) to specify language -->
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <!-- Link to your script file(s) and CSS in here somewhere -->
-		<title lang="en-us">Wanna Play Rock, Paper, Scissors?</title>
-		<link href="./styles.css" rel="stylesheet">
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-		<script src="./scripts.js"></script>
-		<style> body { border: outset 8px;} </style>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Tic Tac Toe</title>
+				<link rel="stylesheet" href="./styles.css">
     </head>
-    <body onload="showHideShots()">
-
-		<h1>Rock, Paper, Scissors, SHOOT!</h1>
-		<br><br>
-
-		<form id="userinput" class="" action="javascript:void(0);">
-			<div class="centerbuttons">
-			<input type="radio" id="rps" name="game" value="rps" checked onclick="showHideShots()">
-			<label for="rps">Play rock, paper, scissors?</label>
-			<br><br>
-			<input type="radio" id="rpsls" name="game" value="rpsls" onclick="showHideShots()">
-			<label for="rpsls">Play rock, paper, scissors, lizard, Spock?</label>
-			<br><br>
-			<input type="checkbox" id="opponent" name="playtype" value="opponent" onclick="showHideShots()">
-			<label for="opponent">Play against an opponent?</label>
-			</div>
-
-			<br><br>
-			<input type="radio" id="rock" name="shot" value="rock" class="rps shots" checked>
-			<label class="shots rps">Rock</label>
-			<input type="radio" id="paper" name="shot" value="paper" class="rps shots">
-			<label class="shots rps">Paper</label>
-			<input type="radio" id="scissors" name="shot" value="scissors" class="rps shots">
-			<label class="shots rps">Scissors</label>
-			<input type="radio" id="lizard" name="shot" value="lizard" class="rpsls shots">
-			<label class="shots rpsls">Lizard</label>
-			<input type="radio" id="spock" name="shot" value="spock" class="rpsls shots">
-			<label class="shots rpsls">Spock</label>
-<!--			<br/><br/>
-			<input type="submit" id="play" name="controls" value="Play">
-      <input type="submit" id="startover" name="controls" value="Start Over"> -->
-		<br>
-	    <div class="centerSubmit">
-	    <button type="submit">Submit</button>
-		</div>
+    <body>
+		<form id="game_form" onsubmit="return playGame(this)">
+		    <input type="radio" name="game" id="RPS_GAME" value="RPS" onclick="validate(this)">
+		    <label for="RPS_GAME">Play Rock, Paper, Scissors?</label><br>
+		    <input type="radio" name="game" id="RPSLS_GAME" value="RPSLS" onclick="validate(this)">
+		    <label for="RPSLS_GAME">Play Rock, Paper, Scissors, Lizard, Spock?</label><br>
+				<br>
+				<input type="radio" name="opponent" id="opponent" value="Opponent" onclick="validate(this)">
+				<label for="opponent">Play against an opponent?</label><br>
+				<br>
+				<input type="radio" name="choice" id="ROCK" value="rock" onclick="validate(this)">
+				<label for="ROCK" id="ROCK_TAG">Rock</label><br>
+				<input type="radio" name="choice" id="PAPER" value="paper" onclick="validate(this)">
+				<label for="PAPER" id="PAPER_TAG">Paper</label><br>
+				<input type="radio" name="choice" id="SCISSORS" value="scissors" onclick="validate(this)">
+				<label for="SCISSORS" id="SCISSORS_TAG">Scissors</label><br>
+				<input type="radio" name="choice" id="LIZARD" value="lizard" onclick="validate(this)">
+				<label for="LIZARD" id="LIZARD_TAG">Lizard</label><br>
+				<input type="radio" name="choice" id="SPOCK" value="spock" onclick="validate(this)">
+				<label for="SPOCK" id="SPOCK_TAG">Spock</label><br>
+				<button type="reset" onclick="return startOver(this);" onsubmit="return false;">Reset</button>
+				<button id="play_button" type="submit" onclick="return playGame(this);" onsubmit="return false;" value="Play">Play</button>
 		</form>
-		<br><br><br><br><br><br>
-
-		<div class="centerPlayStart">
-    	<button type="button" id="play" onclick="playGame()">Play</button>
-    	<button type="button" id="startover" onclick="startOver()">Start Over</button>
+		<div id="results">
+				<div id="results-text"></div>
+				<button type="reset" onclick="return startOver(this);" onsubmit="return false;" id="reset_button">Start Over</button>
 		</div>
-
-    <!-- Your interface markup goes here -->
-    <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
-
+		<script src="./scripts.js"></script>
     </body>
 </html>
